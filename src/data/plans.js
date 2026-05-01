@@ -1,0 +1,112 @@
+export const plans = [
+  {
+    id: 1,
+    name: "Starter",
+    level: "Principiante",
+    price: 19,
+    description: "Ideal para quienes empiezan desde cero con bases sólidas.",
+    features: [
+      "Programación básica semanal",
+      "Acceso a comunidad",
+      "1 revisión mensual",
+    ],
+  },
+  {
+    id: 2,
+    name: "Pro",
+    level: "Intermedio",
+    price: 35,
+    description: "Programación avanzada con seguimiento real de progreso.",
+    popular: true,
+    features: [
+      "Programación 5 días/semana",
+      "Seguimiento de progreso",
+      "2 videollamadas mensuales",
+      "Ajuste de nutrición",
+    ],
+  },
+  {
+    id: 3,
+    name: "Elite",
+    level: "Avanzado",
+    price: 49,
+    description: "Coaching 1:1 completo para atletas que buscan el máximo nivel.",
+    features: [
+      "Programación 100% personalizada",
+      "Acceso directo al coach",
+      "Videollamadas ilimitadas",
+      "Nutrición detallada",
+      "Análisis de movimiento",
+    ],
+  },
+  
+]
+export const plansPresencial = [
+  {
+    id: 1,
+    name: "Bono 4",
+    sessions: 4,
+    price: 158,
+    pricePerSession: 39.5,
+    description: "Ideal para empezar con sesiones de entrenamiento personal.",
+    features: [
+      "4 sesiones presenciales",
+      "Evaluación inicial",
+      "Plan de entrenamiento personalizado",
+    ],
+  },
+  {
+    id: 2,
+    name: "Bono 5",
+    sessions: 5,
+    price: 192,
+    pricePerSession: 38.4,
+    popular: true,
+    description: "El equilibrio perfecto entre frecuencia y precio.",
+    features: [
+      "5 sesiones presenciales",
+      "Evaluación inicial",
+      "Plan de entrenamiento personalizado",
+      "Seguimiento de progreso",
+    ],
+  },
+  {
+    id: 3,
+    name: "Bono 8",
+    sessions: 8,
+    price: 305,
+    pricePerSession: 38.1,
+    description: "Para atletas que quieren resultados serios.",
+    features: [
+      "8 sesiones presenciales",
+      "Evaluación inicial",
+      "Plan de entrenamiento personalizado",
+      "Seguimiento de progreso",
+      "Ajuste nutricional básico",
+    ],
+  },
+  {
+    id: 4,
+    name: "Plan Entrenamiento",
+    sessions: null,
+    price: 35,
+    description: "Programación mensual sin sesiones presenciales.",
+    features: [
+      "Plan de entrenamiento mensual",
+      "Seguimiento online",
+    ],
+  },
+  {
+    id: 5,
+    name: "Plan + Sesión",
+    sessions: null,
+    price: 65,
+    popular: false,
+    description: "Programación mensual con una sesión presencial incluida.",
+    features: [
+      "Plan de entrenamiento mensual",
+      "1 sesión presencial incluida",
+      "Seguimiento online",
+    ],
+  },
+]

@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+
+@theme {
+  /* 🧱 BASE */
+  --color-bg: #0D0D0D;/* fondo principal más profundo */
+  --color-surface: #1A1A1A;  /* cards / navbar */
+  --color-elevated: #2A2A2A;/* hover / capas superiores */
+
+
+  /* 🧠 TEXTOS */
+  --color-text: #FFFFFF;  /* títulos */
+  --color-text-secondary: #B0B0B0;   /* párrafos */
+  --color-muted: #9CA3AF;  /* detalles */
+
+  /* 🦁 BRAND */
+  --color-primary: #F5C518;  /* lion (CTA principal) */
+  --color-primary-dark: #D4A800;  /* hover / active */
+  --color-accent: #FFB020;  /* energía secundaria */
+
+  /* 🧩 UI */
+  --color-border: #2F2F2F;  /* más sutil y moderno */ 
+
+  /* 🔤 TIPOGRAFÍA */
+  --font-display: "Bebas Neue", sans-serif;
+  --font-body: "Barlow", sans-serif;
+}
+
+
+
+
+.link-underline {
+  @apply relative inline-block text-text-secondary transition-colors duration-200;
+}
+.link-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 2px;
+  width: 100%;
+  background-color: var(--color-primary);
+
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 300ms ease;
+  font: --font-display
+}
+.link-underline:hover {
+  color: var(--color-primary);
+}
+
+.link-underline:hover::after {
+  transform: scaleX(1);
+}
+
+
+.hero-gradient {
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(255,255,255,0.04) 0px,
+    rgba(255,255,255,0.04) 2px,
+    transparent 10px,
+    transparent 12px
+  ),
+  var(--color-bg);
+}
