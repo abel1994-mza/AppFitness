@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom"
-import { useAppContext } from "../../../context/useAppContext"
+import { useAppContext } from "../../../context/UseAppContext"
 
 const PlanCard = ({ name, level, price, description, features, popular }) => {
   const navigate = useNavigate()
