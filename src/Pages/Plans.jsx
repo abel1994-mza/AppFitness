@@ -1,4 +1,4 @@
-import PlanCard from "../components/Features/plans/PlanCard"
+import PlanCard from "../components/Features/Plans/PlanCard"
 
 import { plansPresencial } from "../data/plans"
 
