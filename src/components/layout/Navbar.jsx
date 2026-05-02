@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import marca from "../../../src/assets/marca.jpg"
+import marca from "../../../src/assets/marca.png"
 import { Menu,X } from "lucide-react";
 import { useState } from "react";
 
