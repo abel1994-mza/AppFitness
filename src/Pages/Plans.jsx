@@ -1,5 +1,5 @@
-import PlanCard from "../components/features/Plans/PlanCard"
-import { plans } from "../data/plans"
+import PlanCard from "../components/Features/plans/PlanCard"
+
 import { plansPresencial } from "../data/plans"
 
 const Plans = () => {

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import marca from "/carpeta de cosas/Curso-de-programacion/WebFitness/src/assets/marca.png"
+import marca from "../../../public/image/coach.jpg"
 import { Menu,X } from "lucide-react";
 import { useState } from "react";
 

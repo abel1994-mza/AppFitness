@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import { X, Timer, BarChart } from "lucide-react" 
 import { useNavigate } from "react-router-dom"
-import { useAppContext } from "../../context/useAppContext"
+import { useAppContext } from "../../context/UseAppContext"
 
 const TrainingModal = ({ training, onClose }) => {
   const navigate = useNavigate()
