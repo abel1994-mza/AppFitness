@@ -33,7 +33,7 @@ const About = () => {
           <div className="relative">
             <div className="absolute -inset-1 bg-primary opacity-20 rounded-2xl blur-xl" />
             <img
-              src="./public/image/coach.jpg"
+              src="/image/coach.jpg"
               alt="Coach Lion Fitness"
               className="relative rounded-2xl w-full object-cover aspect-[3/4] border border-border"
             />
