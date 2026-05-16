@@ -1,46 +1,46 @@
-export const plans = [
-  {
-    id: 1,
-    name: "Starter",
-    level: "Principiante",
-    price: 19,
-    description: "Ideal para quienes empiezan desde cero con bases sólidas.",
-    features: [
-      "Programación básica semanal",
-      "Acceso a comunidad",
-      "1 revisión mensual",
-    ],
-  },
-  {
-    id: 2,
-    name: "Pro",
-    level: "Intermedio",
-    price: 35,
-    description: "Programación avanzada con seguimiento real de progreso.",
-    popular: true,
-    features: [
-      "Programación 5 días/semana",
-      "Seguimiento de progreso",
-      "2 videollamadas mensuales",
-      "Ajuste de nutrición",
-    ],
-  },
-  {
-    id: 3,
-    name: "Elite",
-    level: "Avanzado",
-    price: 49,
-    description: "Coaching 1:1 completo para atletas que buscan el máximo nivel.",
-    features: [
-      "Programación 100% personalizada",
-      "Acceso directo al coach",
-      "Videollamadas ilimitadas",
-      "Nutrición detallada",
-      "Análisis de movimiento",
-    ],
-  },
+// export const plans = [
+//   {
+//     id: 1,
+//     name: "Starter",
+//     level: "Principiante",
+//     price: 19,
+//     description: "Ideal para quienes empiezan desde cero con bases sólidas.",
+//     features: [
+//       "Programación básica semanal",
+//       "Acceso a comunidad",
+//       "1 revisión mensual",
+//     ],
+//   },
+//   {
+//     id: 2,
+//     name: "Pro",
+//     level: "Intermedio",
+//     price: 35,
+//     description: "Programación avanzada con seguimiento real de progreso.",
+//     popular: true,
+//     features: [
+//       "Programación 5 días/semana",
+//       "Seguimiento de progreso",
+//       "2 videollamadas mensuales",
+//       "Ajuste de nutrición",
+//     ],
+//   },
+//   {
+//     id: 3,
+//     name: "Elite",
+//     level: "Avanzado",
+//     price: 49,
+//     description: "Coaching 1:1 completo para atletas que buscan el máximo nivel.",
+//     features: [
+//       "Programación 100% personalizada",
+//       "Acceso directo al coach",
+//       "Videollamadas ilimitadas",
+//       "Nutrición detallada",
+//       "Análisis de movimiento",
+//     ],
+//   },
   
-]
+// ]
 export const plansPresencial = [
   {
     id: 1,

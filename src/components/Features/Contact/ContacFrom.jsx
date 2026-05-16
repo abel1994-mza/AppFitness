@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useAppContext } from "../../../context/UseAppContext"
+import {plansPresencial} from "../../../data/plans.js"
 
 const ContactForm = () => {
   const { selectedTraining, selectedPlan } = useAppContext()
@@ -16,23 +17,44 @@ const ContactForm = () => {
     setForm({ ...form, [e.target.name]: e.target.value })
   }
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
+const handleSubmit = async (e) => {
+    console.log("Form al enviar:", form) 
+  e.preventDefault()
+    const selectedPlanData = plansPresencial.find((p) => p.name === form.plan)
+  const planPrice = selectedPlanData ? `${selectedPlanData.price}€` : ""
 
-    const mensaje = `
-Hola! Me interesa Lion Fitness 
-
- Nombre: ${form.name}
- Email: ${form.email}
- Entrenamiento: ${form.training}
- Plan: ${form.plan}
- Mensaje: ${form.message}
-    `.trim()
-
-    const url = `https://wa.me/659561750?text=${encodeURIComponent(mensaje)}`
-    window.open(url, "_blank")
+  // 1. Guardar en MongoDB
+  try {
+    await fetch(`${import.meta.env.VITE_API_URL}/api/contact`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: form.name,
+        email: form.email,
+        plan: `${form.plan}- ${planPrice} `,
+        training: form.training,
+        message: form.message
+      })
+    })
+    console.log("Lead guardado en MongoDB")
+  } catch (error) {
+    console.error("Error al guardar lead:", error)
   }
 
+  // 2. Abrir WhatsApp
+  const mensaje = `
+Hola! Me interesa Lion Fitness 
+
+Nombre: ${form.name}
+Email: ${form.email}
+Entrenamiento: ${form.training}
+Plan: ${form.plan} ${planPrice}
+Mensaje: ${form.message}
+  `.trim()
+
+  const url = `https://wa.me/659561750?text=${encodeURIComponent(mensaje)}`
+  window.open(url, "_blank")
+}
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-6">
 
@@ -78,7 +100,7 @@ Hola! Me interesa Lion Fitness
         </select>
       </div>
 
-      <div className="flex flex-col gap-2">
+      {/* <div className="flex flex-col gap-2">
         <label className="text-text-secondary text-sm">Plan</label>
         <select
           name="plan"
@@ -91,7 +113,23 @@ Hola! Me interesa Lion Fitness
           <option value="Pro">Pro — 35€/mes</option>
           <option value="Elite">Elite — 49€/mes</option>
         </select>
-      </div>
+      </div> */}
+      <div className="flex flex-col gap-2">
+  <label className="text-text-secondary text-sm">Plan</label>
+  <select
+    name="plan"
+    value={form.plan}
+    onChange={handleChange}
+    className="bg-surface border border-border rounded-lg px-4 py-3 text-white text-sm outline-none focus:border-primary transition-colors"
+  >
+    <option value="">Selecciona un plan...</option>
+    {plansPresencial.map((plan) => (
+      <option key={plan.id} value={plan.name}>
+        {plan.name} — {plan.price}€
+      </option>
+    ))}
+  </select>
+</div>
 
       <div className="flex flex-col gap-2">
         <label className="text-text-secondary text-sm">Mensaje</label>
