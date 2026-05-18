@@ -3,6 +3,8 @@ import cors from "cors"
 import mongoose from "mongoose"
 import dotenv from "dotenv"
 import Lead from "./models/Lead.js"
+import authRouter from "./routes/auth.js"
+import authMiddleware from "./middleware/auth.js"
 
 dotenv.config()
 
@@ -15,6 +17,13 @@ app.use(express.json())
 app.get("/", (req, res) => {
   res.json({ mensaje: "LionFitness API funcionando" })
 })
+
+// Ruta protegida — solo con token válido
+app.get("/api/profile", authMiddleware, (req, res) => {
+  res.json({ success: true, user: req.user })
+})
+
+app.use("/api/auth", authRouter)
 
 app.get("/api/plans", (req, res) => {
   res.json([
