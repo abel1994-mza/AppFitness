@@ -25,6 +25,7 @@ router.post("/register", async (req, res) => {
     res.status(201).json({ success: true, message: "User created" })
 
   } catch (error) {
+      console.error("Register error:", error.message)
     res.status(500).json({ error: "Server error" })
   }
 })
@@ -56,6 +57,7 @@ router.post("/login", async (req, res) => {
     res.json({ success: true, token })
 
   } catch (error) {
+      console.error("Login error:", error.message)
     res.status(500).json({ error: "Server error" })
   }
 })
