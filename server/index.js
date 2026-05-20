@@ -7,7 +7,7 @@ import authRouter from "./routes/auth.js"
 import authMiddleware from "./middleware/auth.js"
 
 dotenv.config()
-
+// updated
 const app = express()
 const PORT = process.env.PORT || 3000
 
