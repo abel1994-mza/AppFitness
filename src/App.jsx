@@ -7,8 +7,8 @@ import Contact from "./Pages/Contact"
 import Info from "./Pages/Info"
 import Training from "./Pages/Training"
 import PageLayout from "./components/layout/PageLayout"
-import Login from "./pages/Login"
-import Register from "./pages/Register"
+import Login from "./Pages/Login"
+import Register from "./Pages/Register"
 import Profile from "./Pages/Profile"
 
 
