@@ -7,31 +7,35 @@ import Contact from "./Pages/Contact"
 import Info from "./Pages/Info"
 import Training from "./Pages/Training"
 import PageLayout from "./components/layout/PageLayout"
+import Login from "./pages/Login"
+import Register from "./pages/Register"
+import Profile from "./Pages/Profile"
+
+
 function App() {
-
-
   return (
     <>
-    <BrowserRouter >
+    <BrowserRouter>
     <ScrollToTop/>
-     <Layout >
-      <Routes>
-        
-        <Route path="/" element={<Home/>}/>
-        <Route element={<PageLayout />} >
-        <Route path="/plans" element={<Plans/>}/>
-        <Route path="/contact" element={<Contact/>}/>
-        <Route path="/training" element={<Training/>}/>
-        <Route path="/about" element={<Info/>}/>      
-         
-        </Route>
-       
+     <Routes>
+  {/* Sin layout */}
+  <Route path="/login" element={<Login />} />
+  <Route path="/register" element={<Register />} />
 
-
-      </Routes>
-     </Layout>
-    </BrowserRouter>
+  {/* Con layout */}
+  <Route element={<Layout />}>
+    <Route path="/" element={<Home />} />
+      <Route path="/profile" element={<Profile/>} />
+    <Route element={<PageLayout />}>
+      <Route path="/plans" element={<Plans />} />
+      <Route path="/contact" element={<Contact />} />
+      <Route path="/training" element={<Training />} />
+      <Route path="/about" element={<Info />} />
     
+    </Route>
+  </Route>
+</Routes>
+    </BrowserRouter>
     </>
   )
 }
