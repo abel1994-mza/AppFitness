@@ -10,6 +10,7 @@ import PageLayout from "./components/layout/PageLayout"
 import Login from "./Pages/Login"
 import Register from "./Pages/Register"
 import Profile from "./Pages/Profile"
+import Dashboard from "./Pages/Dashboard"
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
   {/* Sin layout */}
   <Route path="/login" element={<Login />} />
   <Route path="/register" element={<Register />} />
+  <Route path="/dashboard" element={<Dashboard />} />
 
   {/* Con layout */}
   <Route element={<Layout />}>

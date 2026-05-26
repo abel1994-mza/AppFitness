@@ -44,6 +44,12 @@ const Profile = () => {
             <p className="text-white text-sm">{user.id}</p>
           </div>
         </div>
+        <button
+  onClick={() => navigate("/dashboard")}
+  className="mt-4 bg-primary hover:bg-primary-hover text-bg font-medium px-6 py-3 rounded-lg transition-colors text-sm"
+>
+  Ver mi rutina
+</button>
 
         <button
           onClick={handleLogout}
